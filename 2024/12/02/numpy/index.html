@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>numpy | everything</title><meta name="author" content="wct"><meta name="copyright" content="wct"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="创建数组 使用np.array()创建简单数组 可以从Python列表或元组创建NumPy数组。例如，创建一个一维数组：123import numpy as npone_d_array &#x3D; np.array([1, 2, 3, 4, 5])print(one_d_array) 这会输出[1 2 3 4 5]。 创建一个二维数组：12two_d_array &#x3D; np.array([[1, 2, 3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="numpy">
+<meta property="og:url" content="https://cbc159357.github.io/2024/12/02/numpy/index.html">
+<meta property="og:site_name" content="everything">
+<meta property="og:description" content="创建数组 使用np.array()创建简单数组 可以从Python列表或元组创建NumPy数组。例如，创建一个一维数组：123import numpy as npone_d_array &#x3D; np.array([1, 2, 3, 4, 5])print(one_d_array) 这会输出[1 2 3 4 5]。 创建一个二维数组：12two_d_array &#x3D; np.array([[1, 2, 3">
+<meta property="og:locale">
+<meta property="og:image" content="https://cbc159357.github.io/img/5.jpeg">
+<meta property="article:published_time" content="2024-12-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-12-04T07:09:53.694Z">
+<meta property="article:author" content="wct">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cbc159357.github.io/img/5.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://cbc159357.github.io/2024/12/02/numpy/index.html"><link rel="preconnect" href="//cdnjs.cloudflare.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: wct","link":"Link: ","source":"Source: everything","info":"Copyright belongs to the author. For commercial use, please contact the author for authorization. For non-commercial use, please indicate the source."}},
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdnjs.cloudflare.com/ajax/libs/egjs-infinitegrid/4.12.0/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'numpy',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/readPercent.css"><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (true) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="web_bg" style="background-image: url(img/4.jpeg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/8.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/ware/"><i class="fa-fw fas fa-tags"></i><span> 软件</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 人生清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-archive"></i><span> 待定</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: img\5.jpeg;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">everything</span></a><a class="nav-page-title" href="/"><span class="site-name">numpy</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/ware/"><i class="fa-fw fas fa-tags"></i><span> 软件</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 人生清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-archive"></i><span> 待定</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">numpy</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-12-01T16:00:00.000Z" title="Created 2024-12-02 00:00:00">2024-12-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-12-04T07:09:53.694Z" title="Updated 2024-12-04 15:09:53">2024-12-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>7mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2024-12-04 15:09:53&quot;}" hidden></div><ol>
+<li><strong>创建数组</strong><ul>
+<li><strong>使用<code>np.array()</code>创建简单数组</strong><ul>
+<li>可以从Python列表或元组创建NumPy数组。例如，创建一个一维数组：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">one_d_array = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line"><span class="built_in">print</span>(one_d_array)</span><br></pre></td></tr></table></figure>
+这会输出<code>[1 2 3 4 5]</code>。</li>
+<li>创建一个二维数组：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">two_d_array = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line"><span class="built_in">print</span>(two_d_array)</span><br></pre></td></tr></table></figure>
+输出为：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[1 2 3]</span><br><span class="line"> [4 5 6]]</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><strong>使用特定函数创建数组</strong><ul>
+<li><code>np.zeros()</code>：创建全零数组。例如，创建一个形状为(3, 4)的二维全零数组：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zeros_array = np.zeros((<span class="number">3</span>, <span class="number">4</span>))</span><br><span class="line"><span class="built_in">print</span>(zeros_array)</span><br></pre></td></tr></table></figure>
+输出为：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[[0. 0. 0. 0.]</span><br><span class="line"> [0. 0. 0. 0.]</span><br><span class="line"> [0. 0. 0. 0.]]</span><br></pre></td></tr></table></figure></li>
+<li><code>np.ones()</code>：创建全一数组。创建一个形状为(2, 3)的二维全一数组：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ones_array = np.ones((<span class="number">2</span>, <span class="number">3</span>))</span><br><span class="line"><span class="built_in">print</span>(ones_array)</span><br></pre></td></tr></table></figure>
+输出为：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[1. 1. 1.]</span><br><span class="line"> [1. 1. 1.]]</span><br></pre></td></tr></table></figure></li>
+<li><code>np.arange()</code>：类似于Python的<code>range()</code>函数，用于创建一个等差数组。例如，创建一个从0开始，以2为步长，到10结束（不包括10）的数组：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arange_array = np.arange(<span class="number">0</span>, <span class="number">10</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(arange_array)</span><br></pre></td></tr></table></figure>
+输出为<code>[0 2 4 6 8]</code>。</li>
+<li><code>np.linspace()</code>：创建一个在指定区间内均匀分布的数组。例如，创建一个在0到1之间，包含5个元素的数组：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">linspace_array = np.linspace(<span class="number">0</span>, <span class="number">1</span>, <span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(linspace_array)</span><br></pre></td></tr></table></figure>
+输出为<code>[0.   0.25 0.5  0.75 1.  ]</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>数组的基本属性和操作</strong><ul>
+<li><strong>形状（Shape）和维度（Dimension）</strong><ul>
+<li>可以通过<code>shape</code>属性获取数组的形状。对于二维数组，它返回一个包含行数和列数的元组。例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">two_d_array = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line"><span class="built_in">print</span>(two_d_array.shape)</span><br></pre></td></tr></table></figure>
+输出为<code>(2, 3)</code>，表示这是一个2行3列的二维数组。</li>
+<li>可以通过<code>ndim</code>属性获取数组的维度。例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">one_d_array = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line"><span class="built_in">print</span>(one_d_array.ndim)</span><br></pre></td></tr></table></figure>
+输出为1，表示这是一个一维数组。</li>
+</ul>
+</li>
+<li><strong>数据类型（Data Type）</strong><ul>
+<li>可以通过<code>dtype</code>属性查看数组的数据类型。例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int_array = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"><span class="built_in">print</span>(int_array.dtype)</span><br></pre></td></tr></table></figure>
+输出为<code>int64</code>（在大多数情况下）。可以在创建数组时指定数据类型，如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">float_array = np.array([<span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>], dtype = np.float32)</span><br><span class="line"><span class="built_in">print</span>(float_array.dtype)</span><br></pre></td></tr></table></figure>
+输出为<code>float32</code>。</li>
+</ul>
+</li>
+<li><strong>数组的索引和切片</strong><ul>
+<li>对于一维数组，索引和Python列表类似。例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">one_d_array = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line"><span class="built_in">print</span>(one_d_array[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+输出为3，表示获取索引为2的元素。</li>
+<li>切片操作也类似。例如，获取索引从1开始（包括1）到4结束（不包括4）的元素：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(one_d_array[<span class="number">1</span>:<span class="number">4</span>])</span><br></pre></td></tr></table></figure>
+输出为<code>[2 3 4]</code>。</li>
+<li>对于二维数组，使用两个索引来定位元素。例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">two_d_array = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line"><span class="built_in">print</span>(two_d_array[<span class="number">1</span>, <span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+输出为6，表示获取第二行（索引为1）第三列（索引为2）的元素。</li>
+<li>二维数组的切片操作。例如，获取第一行的所有元素：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(two_d_array[<span class="number">0</span>, :])</span><br></pre></td></tr></table></figure>
+输出为<code>[1 2 3]</code>，也可以写成<code>two_d_array[0]</code>。获取第一列的所有元素：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(two_d_array[:, <span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+输出为<code>[1 4]</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>数学运算</strong><ul>
+<li><strong>元素级运算（Element - wise Operations）</strong><ul>
+<li>可以对数组进行加、减、乘、除等运算。例如，对于两个形状相同的数组进行加法运算：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array1 = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">array2 = np.array([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line"><span class="built_in">print</span>(array1 + array2)</span><br></pre></td></tr></table></figure>
+输出为<code>[5 7 9]</code>。同样可以进行减法、乘法和除法运算。</li>
+<li>还可以对数组和一个标量进行运算。例如，将数组中的每个元素乘以2：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(array1 * <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+输出为<code>[2 4 6]</code>。</li>
+</ul>
+</li>
+<li><strong>矩阵运算（Matrix Operations）</strong><ul>
+<li>对于二维数组，可以进行矩阵乘法。使用<code>np.dot()</code>函数或<code>@</code>运算符。例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">matrix1 = np.array([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line">matrix2 = np.array([[<span class="number">5</span>, <span class="number">6</span>], [<span class="number">7</span>, <span class="number">8</span>]])</span><br><span class="line"><span class="built_in">print</span>(np.dot(matrix1, matrix2))</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="built_in">print</span>(matrix1 @ matrix2)</span><br></pre></td></tr></table></figure>
+输出为：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[19 22]</span><br><span class="line"> [43 50]]</span><br></pre></td></tr></table></figure></li>
+<li>计算矩阵的转置。对于二维数组<code>matrix</code>，可以使用<code>matrix.T</code>来获取其转置。例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">matrix = np.array([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line"><span class="built_in">print</span>(matrix.T)</span><br></pre></td></tr></table></figure>
+输出为：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[1 3]</span><br><span class="line"> [2 4]]</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>统计和聚合函数</strong><ul>
+<li><strong>基本统计函数</strong><ul>
+<li><code>np.mean()</code>：计算数组的平均值。例如，对于一维数组：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">array = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line"><span class="built_in">print</span>(np.mean(array))</span><br></pre></td></tr></table></figure>
+输出为3.0。对于二维数组，可以指定轴来计算每行或每列的平均值。例如，计算二维数组每行的平均值：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">two_d_array = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line"><span class="built_in">print</span>(np.mean(two_d_array, axis = <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+输出为<code>[2. 5.]</code>，表示第一行平均值为2，第二行平均值为5。</li>
+<li><code>np.median()</code>：计算数组的中位数。例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.median(array))</span><br></pre></td></tr></table></figure>
+输出为3。</li>
+<li><code>np.std()</code>：计算数组的标准差。例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.std(array))</span><br></pre></td></tr></table></figure>
+输出为<code>1.4142135623730951</code>（约为$\sqrt{2}$）。</li>
+</ul>
+</li>
+<li><strong>最值和求和函数</strong><ul>
+<li><code>np.max()</code>和<code>np.min()</code>：分别计算数组的最大值和最小值。例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.<span class="built_in">max</span>(array))</span><br><span class="line"><span class="built_in">print</span>(np.<span class="built_in">min</span>(array))</span><br></pre></td></tr></table></figure>
+输出为5和1。对于二维数组，可以指定轴来获取每行或每列的最值。</li>
+<li><code>np.sum()</code>：计算数组的总和。例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.<span class="built_in">sum</span>(array))</span><br></pre></td></tr></table></figure>
+输出为15。对于二维数组，也可以指定轴来计算每行或每列的和。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>排序和搜索</strong><ul>
+<li><strong>排序函数</strong><ul>
+<li><code>np.sort()</code>：对数组进行排序。对于一维数组，它会返回一个排序后的新数组。例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">array = np.array([<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>])</span><br><span class="line"><span class="built_in">print</span>(np.sort(array))</span><br></pre></td></tr></table></figure>
+输出为<code>[1 1 3 4 5]</code>。对于二维数组，默认对每行进行排序。例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">two_d_array = np.array([[<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>], [<span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>]])</span><br><span class="line"><span class="built_in">print</span>(np.sort(two_d_array))</span><br></pre></td></tr></table></figure>
+输出为：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[1 3 4]</span><br><span class="line"> [1 5 9]]</span><br></pre></td></tr></table></figure></li>
+<li>可以使用<code>np.argsort()</code>函数获取排序后的索引。例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">array = np.array([<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>])</span><br><span class="line"><span class="built_in">print</span>(np.argsort(array))</span><br></pre></td></tr></table></figure>
+输出为<code>[1 3 0 2 4]</code>，表示排序后元素原来的索引顺序。</li>
+</ul>
+</li>
+<li><strong>搜索函数</strong><ul>
+<li><code>np.argmax()</code>和<code>np.argmin()</code>：分别返回数组中最大值和最小值的索引。例如：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array = np.array([<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>])</span><br><span class="line"><span class="built_in">print</span>(np.argmax(array))</span><br><span class="line"><span class="built_in">print</span>(np.argmin(array))</span><br></pre></td></tr></table></figure>
+输出为4和1。对于二维数组，可以指定轴来获取每行或每列最值的索引。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>广播（Broadcasting）</strong><ul>
+<li>广播是NumPy的一个强大功能，它允许不同形状的数组在一定规则下进行运算。例如，一个形状为(3, 1)的数组和一个形状为(1, 3)的数组相加，NumPy会自动将它们的形状进行扩展以进行元素级别的加法运算。<ul>
+<li>假设我们有一个列向量和一个行向量：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">column_vector = np.array([[<span class="number">1</span>], [<span class="number">2</span>], [<span class="number">3</span>]])</span><br><span class="line">row_vector = np.array([<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line"><span class="built_in">print</span>(column_vector + row_vector)</span><br></pre></td></tr></table></figure>
+输出为：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[[5 6 7]</span><br><span class="line"> [6 7 8]</span><br><span class="line"> [7 8 9]]</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>线性代数操作</strong><ul>
+<li><strong>求解线性方程组</strong><ul>
+<li>可以使用<code>np.linalg.solve()</code>函数来求解线性方程组。例如，对于方程组$Ax = b$，其中$A$是系数矩阵，$x$是未知数向量，$b$是常数项向量。假设$A=\begin{bmatrix}1&amp;2\3&amp;4\end{bmatrix}$，$b=\begin{bmatrix}5\6\end{bmatrix}$，则可以这样求解：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A = np.array([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line">b = np.array([<span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line">x = np.linalg.solve(A, b)</span><br><span class="line"><span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure>
+输出为<code>[-4.  4.5]</code>，即$x_1=-4$，$x_2 = 4.5$。</li>
+</ul>
+</li>
+<li><strong>计算矩阵的特征值和特征向量</strong><ul>
+<li>使用<code>np.linalg.eig()</code>函数。例如，对于矩阵$A=\begin{bmatrix}1&amp;2\2&amp;1\end{bmatrix}$：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A = np.array([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">1</span>]])</span><br><span class="line">eigenvalues, eigenvectors = np.linalg.eig(A)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;特征值:&quot;</span>, eigenvalues)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;特征向量:&quot;</span>, eigenvectors)</span><br></pre></td></tr></table></figure>
+输出为：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">特征值: [-1.  3.]</span><br><span class="line">特征向量: [[-0.70710678 -0.70710678]</span><br><span class="line">             [ 0.70710678 -0.70710678]]</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>随机数生成</strong><ul>
+<li><strong>均匀分布随机数</strong><ul>
+<li>使用<code>np.random.uniform()</code>函数生成在指定区间内均匀分布的随机数。例如，生成10个在0到1之间均匀分布的随机数：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uniform_random_numbers = np.random.uniform(<span class="number">0</span>, <span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line"><span class="built_in">print</span>(uniform_random_numbers)</span><br></pre></td></tr></table></figure>
+会输出10个介于0和1之间的随机数。</li>
+</ul>
+</li>
+<li><strong>正态分布随机数</strong><ul>
+<li>使用<code>np.random.normal()</code>函数生成服从正态分布的随机数。例如，生成5个均值为0，标准差为1的正态分布随机数：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">normal_random_numbers = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, <span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(normal_random_numbers)</span><br></pre></td></tr></table></figure>
+会输出5个近似服从正态分布的随机数。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://cbc159357.github.io">wct</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://cbc159357.github.io/2024/12/02/numpy/">https://cbc159357.github.io/2024/12/02/numpy/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img%5C5.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.4/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.4/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/12/03/pandas/" title="matplotlib"><img class="cover" src="/img%5C5.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">matplotlib</div></div><div class="info-2"><div class="info-item-1"> plot函数所属包 在Python中，plot函数最常见于matplotlib库。matplotlib是一个广泛使用的绘图库，用于创建各种静态、动态和交互式的可视化图表。在matplotlib中，plot函数主要用于绘制折线图。例如，绘制一个简单的函数 $y = x^2$ 在区间 $[0, 10]$ 的图像，代码如下：123456import matplotlib.pyplot as pltimport numpy as npx = np.linspace(0, 10, 100)y = x ** 2plt.plot(x, y)plt.show() 这里先导入了matplotlib.pyplot模块并简称为plt，以及numpy模块。然后生成了x轴的数据（从0到10均匀分布的100个点），计算出对应的y轴数据（x的平方），通过plt.plot绘制折线图，最后使用plt.show展示图形。      scatter（matplotlib库）：用于绘制散点图，它可以很好地展示两个变量之间的关系或者数据的分布情况。例如，展示学生的身高和体重的关系：1234567import...</div></div></div></a><a class="pagination-related" href="/2024/11/14/css/" title="css"><img class="cover" src="/img%5C7.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">css</div></div><div class="info-2"><div class="info-item-1">CSS样式*（通配选择器）： margin：  设置元素外边距，控制与周围元素间隔，代码中设为0清除默认外边距。  padding：  设置元素内边距，即内容与边框距离，代码中设为0清除默认内边距。  background（body元素）：  设置元素背景，body中用url(4.jpeg)指定图片路径且background-size: cover让图片自适应铺满（因body宽100%、高100vh，铺满视口）。  width（body元素）：  设置元素宽度，body中设为100%与浏览器视口宽度相同。  height（body元素）：  设置元素高度，body中设为100vh即视口高度100%，填满视口。  display:...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/8.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">wct</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/cbc159357/cbc.159357.github.io.git"><i></i><span>🛴前往小家...</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content"><center>主域名：<a target="_blank" rel="noopener" href="https://github.com/cbc159357/cbc.159357.github.io.git"></a></div></div><div class="sticky_layout"></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By wct</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script defer src="/js/cursor.js"></script><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script defer data-pjax src="/js/readPercent.js"></script><script async src="/js/title.js"></script><script async src="/js/snow.js"></script><canvas id="snow"></canvas><script src="https://cdnjs.cloudflare.com/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v6.2.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.3.1" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" data-title="本站采用多线部署，主线路托管于Vercel" title=""><img src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://dashboard.4everland.org/" style="margin-inline:5px" data-title="本站采用多线部署，备用线路托管于4EVERLAND" title=""><img src="https://img.shields.io/badge/Hosted-4EVERLAND-22DDDD?style=flat&amp;logo=IPFS" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
